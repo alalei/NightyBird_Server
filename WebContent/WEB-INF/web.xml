@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>NightyBird_Server</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description>rest api for daily report</description>
+    <display-name>daily</display-name>
+    <servlet-name>daily</servlet-name>
+    <servlet-class>net.daily</servlet-class>
+    <init-param>
+      <description>start time</description>
+      <param-name>start</param-name>
+      <param-value></param-value>
+    </init-param>
+    <init-param>
+      <description>end time</description>
+      <param-name>end</param-name>
+      <param-value></param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>daily</servlet-name>
+    <url-pattern>/daily</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>REST API for weekly data</description>
+    <display-name>weekly</display-name>
+    <servlet-name>weekly</servlet-name>
+    <servlet-class>net.weekly</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>weekly</servlet-name>
+    <url-pattern>/weekly</url-pattern>
+  </servlet-mapping>
+</web-app>
